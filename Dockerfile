@@ -1,6 +1,7 @@
 FROM smondet/genspio-doc-dockerfiles:main406
 RUN git clone https://github.com/hammerlab/genspio.git
-WORKDIR ./genspio/RUN opam config exec -- ocaml please.mlt configure
+WORKDIR ./genspio/
+RUN opam config exec -- ocaml please.mlt configure
 RUN opam config exec -- dune build @install
 RUN opam config exec -- dune build _build/default/src/test/main.exe
 RUN sudo cp _build/default/src/test/main.exe /usr/bin/genspio_test
