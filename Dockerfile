@@ -7,4 +7,5 @@ RUN opam config exec -- opam switch 4.07
 RUN opam config exec -- opam install --yes depext
 RUN opam config exec -- opam pin add -n febusy 'https://gitlab.com/smondet/febusy.git'
 RUN opam config exec -- opam pin add -n caml2html 'https://github.com/smondet/caml2html.git#fix-build-407-issue-5'
-RUN opam config exec -- opam depext -y -i rresult nonstd sosa uri febusy cmdliner merlin caml2html base
+RUN opam config exec -- opam depext -y  rresult nonstd sosa uri febusy cmdliner merlin caml2html base
+RUN opam config exec -- opam install --unlock-base -y  rresult nonstd sosa uri febusy cmdliner merlin caml2html base
